@@ -1,0 +1,11 @@
+.calendar-reminder {
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 0.8em;
+  color: white;
+  margin-top: 2px;
+}
+
+.calendar-reminder:hover {
+  opacity: 0.5;
+}

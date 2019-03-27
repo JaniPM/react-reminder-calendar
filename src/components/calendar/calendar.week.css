@@ -1,0 +1,17 @@
+.calendar-week {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 0;
+  border-top: 1px solid black;
+  background-color: #fff;
+}
+
+.calendar-week:last-child {
+  border-bottom: 1px solid black;
+}
+
+.calendar-week__number {
+  width: 2em;
+  border-left: 1px solid black;
+  background-color: #f1f3f4;
+}

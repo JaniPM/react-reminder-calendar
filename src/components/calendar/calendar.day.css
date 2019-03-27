@@ -1,0 +1,20 @@
+.calendar-day {
+  flex-grow: 1;
+  flex-basis: 0;
+  border-left: 1px solid black;
+  overflow: hidden;
+}
+
+.calendar-day:last-child {
+  border-right: 1px solid black;
+}
+
+.calendar-day-grey {
+  background-color: #f1f3f4;
+  opacity: 0.5;
+}
+
+.calendar-day__title_highlighted {
+  font-weight: bold;
+  text-decoration: underline;
+}

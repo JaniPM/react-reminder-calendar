@@ -1,0 +1,14 @@
+.calendar-toolbar {
+  text-align: left;
+  padding-bottom: 1em;
+}
+
+.calendar-toolbar__move {
+  margin-right: 1em;
+  cursor:pointer;
+}
+
+.calendar-toolbar__add-new {
+  float: right;
+  cursor:pointer;
+}

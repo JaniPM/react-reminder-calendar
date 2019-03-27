@@ -1,0 +1,110 @@
+body {
+  background-color: beige;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 10vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-footer {
+  background-color: #282c34;
+  height: 2em;
+  margin-top: 2em;
+}
+
+.content {
+  height: 90vh;
+  overflow: auto;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Form components */
+
+input {
+  padding: 10px 20px;
+  margin: 8px;
+}
+
+input[type=text] {
+  box-sizing: border-box;
+}
+
+input[type=text]:focus, input[type=text]:hover {
+  border: 2px solid #555;
+}
+
+input[type=button], input[type=submit], input[type=reset], button {
+  border: none;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor:pointer;
+  background-color: #8194F6;
+  color: white;
+  font-weight: bold;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover, button:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+input:disabled {
+  background-color: #cccccc !important;
+}
+
+input.delete, button.delete {
+  background-color: red;
+}
+
+input.primary, button.primary {
+  background-color: blue;
+  float: right;
+}
+
+.form-row {
+  display: flex;
+  background-color: beige;
+  border-radius: 3px;
+  padding: 1.8em;
+  text-align: left;
+}
+
+.form-column {
+  flex: 1; 
+  order: 1;
+  margin-right: 2em; 
+}
+
+.form-column input[type=text] {
+  width: 100%;
+}
+
+.form-buttons {
+  text-align: left;
+}
+

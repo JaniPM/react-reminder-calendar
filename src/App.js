@@ -1,19 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import PropTypes from 'prop-types';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Header from './components/layout/header';
+import Footer from './components/layout/footer';
 import RemindersCalendar from './reminders-calendar';
+import './App.css';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-    </header>
-    <div className="content">
-      <RemindersCalendar />
-    </div>
-    <footer className="App-footer" />
-  </div>
+const App = ({ store }) => (
+  <Provider store={store}>
+    <Router>
+      <div className="App">
+        <Header />
+        <div className="content">
+          <Route exact path="/" component={RemindersCalendar} />
+        </div>
+        <Footer />
+      </div>
+    </Router>
+  </Provider>
 );
+
+App.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  store: PropTypes.any.isRequired
+};
 
 export default App;

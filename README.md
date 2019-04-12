@@ -13,6 +13,6 @@ React + redux demo project to make Google like reminder calender. Examples inclu
 
 * **state** root level project state
 * **components** contains all reusable presentation components
-* **reminders-calendar** contains module to show reminder calendar
+* **pages/reminders-calendar** contains module to show reminder calendar
   * state: redux state for the module. reducer.js manages the immutable state as it was coming from the database. index.js offers memorized selectors to convert the state to data structures that best serves the presentation components. actions.js lists the possible actions and action creators.
   * components: presentation components specific to this module e.g. reminder form.

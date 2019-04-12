@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/layout/header';
 import Footer from './components/layout/footer';
-import RemindersCalendar from './reminders-calendar';
+import RemindersCalendar from './pages/reminders-calendar';
+import About from './pages/about';
 import './App.css';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -15,6 +16,7 @@ const App = ({ store }) => (
         <Header />
         <div className="content">
           <Route exact path="/" component={RemindersCalendar} />
+          <Route path="/about" component={About} />
         </div>
         <Footer />
       </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Calendar from '../components/calendar/calendar';
-import CaledarReminder from '../components/calendar/calendar.reminder';
-import Modal from '../components/modal';
+import Calendar from '../../components/calendar/calendar';
+import CaledarReminder from '../../components/calendar/calendar.reminder';
+import Modal from '../../components/modal';
 import Reminder from './components/reminder';
 import { getCurrentDate, getRemindersByDate, getSelectedItem } from './state';
 import {

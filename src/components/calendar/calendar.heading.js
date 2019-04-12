@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './calendar.heading.css';
 
-const CalendarHeading = ({dayTitles}) => (
+const CalendarHeading = ({ dayTitles }) => (
   <div className="calendar-heading">
     {
       dayTitles.map(
@@ -13,7 +13,7 @@ const CalendarHeading = ({dayTitles}) => (
 );
 
 CalendarHeading.propTypes = {
-  dayTitles: PropTypes.array.isRequired
-}
+  dayTitles: PropTypes.arrayOf(String).isRequired
+};
 
 export default CalendarHeading;

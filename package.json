@@ -1,5 +1,5 @@
 {
-  "name": "react-interview-project-jani",
+  "name": "react-reminder-calendar",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,14 +10,19 @@
     "react-datepicker": "^2.1.0",
     "react-dom": "^16.8.4",
     "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "redux": "^4.0.1",
+    "redux-devtools": "^3.5.0",
+    "redux-devtools-extension": "^2.13.8",
     "reselect": "^4.0.0",
     "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "pretest": "eslint 'src/**/*.js'",
+    "eslint-fix": "eslint 'src/**/*.js' --fix",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -31,7 +36,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "redux-devtools": "^3.5.0",
-    "redux-devtools-extension": "^2.13.8"
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4"
   }
 }

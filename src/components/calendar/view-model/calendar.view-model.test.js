@@ -1,4 +1,4 @@
-import { startOfCalendar, endOfCalendar, createMonthCalendar } from './calendar.view-model';
+import { startOfCalendar, endOfCalendar } from './calendar.view-model';
 
 describe('startOfCalendar', () => {
   it('gives start of calendar when in same month', () => {
@@ -33,12 +33,5 @@ describe('endOfCalendar', () => {
     expect(d.getDate()).toBe(6);
     expect(d.getMonth()).toBe(3);
     expect(d.getFullYear()).toBe(2019);
-  });
-});
-
-describe('createMonthCalendar', () => {
-  it('creates with weeks and days', () => {
-    const calendar = createMonthCalendar(new Date());
-    console.log(calendar);
   });
 });

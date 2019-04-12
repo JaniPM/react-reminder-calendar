@@ -5,7 +5,7 @@ import CalendarToolbar from './calendar.toolbar';
 import { createMonthCalendar, dayTitles } from './view-model/calendar.view-model';
 import './calendar.css';
 
-const Calendar = props => {
+const Calendar = (props) => {
   const { date, dayRender, ...toolbarActions } = props;
   const model = createMonthCalendar(date);
   return (
@@ -20,6 +20,6 @@ const Calendar = props => {
 Calendar.propTypes = {
   date: PropTypes.instanceOf(Date).isRequired,
   dayRender: PropTypes.func.isRequired
-}
+};
 
 export default Calendar;

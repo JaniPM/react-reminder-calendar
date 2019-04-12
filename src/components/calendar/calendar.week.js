@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import CalendarDay from './calendar.day';
 import './calendar.week.css';
 
-const CalendarWeek = ({number, days, dayRender}) => (
+const CalendarWeek = ({ number, days, dayRender }) => (
   <div className="calendar-week">
     <div className="calendar-week__number">{number}</div>
     {
@@ -14,7 +14,7 @@ const CalendarWeek = ({number, days, dayRender}) => (
 
 CalendarWeek.propTypes = {
   number: PropTypes.number.isRequired,
-  days: PropTypes.array.isRequired,
+  days: PropTypes.arrayOf(PropTypes.object).isRequired,
   dayRender: PropTypes.func.isRequired
 };
 

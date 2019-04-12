@@ -16,7 +16,7 @@ import {
   selectToday
 } from './state/actions';
 
-const RemindersCalendar = props => {
+const RemindersCalendar = (props) => {
   const {
     selectedItem,
     onCancelEdit,
@@ -30,7 +30,12 @@ const RemindersCalendar = props => {
   if (selectedItem) {
     reminderModal = (
       <Modal>
-        <Reminder item={selectedItem} onCancelEdit={onCancelEdit} onSave={onSave} onDelete={onDelete} />
+        <Reminder
+          item={selectedItem}
+          onCancelEdit={onCancelEdit}
+          onSave={onSave}
+          onDelete={onDelete}
+        />
       </Modal>
     );
   }
@@ -39,9 +44,9 @@ const RemindersCalendar = props => {
     if (!remindersByDate[dayId]) {
       return null;
     }
-    return remindersByDate[dayId].map(reminder =>
+    return remindersByDate[dayId].map(reminder => (
       <CaledarReminder {...reminder} onEdit={props.onEdit} key={reminder.id} />
-    );
+    ));
   }
 
   return (
@@ -63,13 +68,13 @@ const mapDispatchToProps = dispatch => ({
   onNext: () => dispatch(moveForward()),
   onToday: () => dispatch(selectToday()),
   onAddNew: () => dispatch(addItem()),
-  onEdit: (id) => dispatch(editItem(id)),
-  onSave: (item) => dispatch(saveItem(item)),
-  onDelete: (id) => dispatch(deleteItem(id)),
+  onEdit: id => dispatch(editItem(id)),
+  onSave: item => dispatch(saveItem(item)),
+  onDelete: id => dispatch(deleteItem(id)),
   onCancelEdit: () => dispatch(cancelEdit())
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(RemindersCalendar)
+)(RemindersCalendar);

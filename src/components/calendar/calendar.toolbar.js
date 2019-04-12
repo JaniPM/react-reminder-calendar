@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './calendar.toolbar.css';
 
-const CalendarToolbar = ({onPrevious, onToday, onNext, onAddNew}) => (
+const CalendarToolbar = ({
+  onPrevious, onToday, onNext, onAddNew
+}) => (
   <div className="calendar-toolbar">
-    <button className="calendar-toolbar__move" onClick={onPrevious}>Prev</button>
-    <button className="calendar-toolbar__move" onClick={onToday}>Today</button>
-    <button className="calendar-toolbar__move" onClick={onNext}>Next</button>
-    <button className="calendar-toolbar__add-new" onClick={onAddNew}>Add New +</button>
+    <button type="button" className="calendar-toolbar__move" onClick={onPrevious}>Prev</button>
+    <button type="button" className="calendar-toolbar__move" onClick={onToday}>Today</button>
+    <button type="button" className="calendar-toolbar__move" onClick={onNext}>Next</button>
+    <button type="button" className="calendar-toolbar__add-new" onClick={onAddNew}>Add New +</button>
   </div>
 );
 
@@ -19,4 +21,3 @@ CalendarToolbar.propTypes = {
 };
 
 export default CalendarToolbar;
-

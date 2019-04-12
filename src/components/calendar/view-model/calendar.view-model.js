@@ -10,7 +10,7 @@ import {
 } from 'date-fns';
 
 export const monthTitles = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-export const dayTitles = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']; 
+export const dayTitles = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 export function startOfCalendar(date) {
   return startOfWeek(startOfMonth(date));

@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import DatePicker from "react-datepicker";
+import DatePicker from 'react-datepicker';
 import { CirclePicker } from 'react-color';
 
-const Reminder = ({item, onSave, onDelete, onCancelEdit}) => {
+const Reminder = ({
+  item, onSave, onDelete, onCancelEdit
+}) => {
   // Init reminder model with default values
-  const [fields, setFields] = useState({color: '#f44336', ...item});
+  const [fields, setFields] = useState({ color: '#f44336', ...item });
 
-  function handleChange (e) {
-    const name = e.target.name;
-    const value = e.target.value;
-    setFields({...fields, [name]: value});
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFields({ ...fields, [name]: value });
   }
 
-  function handleDateChange (date) {
-    setFields({...fields, startDate: date});
+  function handleDateChange(date) {
+    setFields({ ...fields, startDate: date });
   }
 
-  function handleColorChange (color) {
-    setFields({...fields, color: color.hex});
+  function handleColorChange(color) {
+    setFields({ ...fields, color: color.hex });
   }
 
   function handleSubmit(e) {
@@ -26,7 +27,7 @@ const Reminder = ({item, onSave, onDelete, onCancelEdit}) => {
     onSave(fields);
   }
 
-  function handleDelete(e) {
+  function handleDelete() {
     onDelete(item.id);
   }
 
@@ -44,7 +45,8 @@ const Reminder = ({item, onSave, onDelete, onCancelEdit}) => {
               maxLength="30"
               value={fields.title}
               name="title"
-              onChange={handleChange} />
+              onChange={handleChange}
+            />
             <DatePicker
               selected={fields.startDate}
               onChange={handleDateChange}
@@ -52,12 +54,14 @@ const Reminder = ({item, onSave, onDelete, onCancelEdit}) => {
               timeFormat="HH:mm"
               timeIntervals={30}
               dateFormat="MMMM d, yyyy h:mm aa"
-              timeCaption="time" />
+              timeCaption="time"
+            />
           </div>
           <div className="form-column">
             <CirclePicker
-              color={ fields.color }
-              onChangeComplete={ handleColorChange } />
+              color={fields.color}
+              onChangeComplete={handleColorChange}
+            />
           </div>
         </div>
         <div className="form-buttons">
@@ -67,7 +71,7 @@ const Reminder = ({item, onSave, onDelete, onCancelEdit}) => {
         </div>
       </form>
     </div>
-  )
+  );
 };
 
 Reminder.propTypes = {
@@ -75,7 +79,7 @@ Reminder.propTypes = {
     id: PropTypes.string,
     title: PropTypes.string.isRequired,
     startDate: PropTypes.instanceOf(Date).isRequired
-  }),
+  }).isRequired,
   onDelete: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
   onCancelEdit: PropTypes.func.isRequired

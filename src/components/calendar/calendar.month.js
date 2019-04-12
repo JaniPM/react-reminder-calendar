@@ -4,7 +4,7 @@ import CalendarHeading from './calendar.heading';
 import CalendarWeek from './calendar.week';
 import './calendar.month.css';
 
-const CalendarMonth = ({dayTitles, weeks, dayRender}) => (
+const CalendarMonth = ({ dayTitles, weeks, dayRender }) => (
   <div className="calendar-month">
     <CalendarHeading dayTitles={dayTitles} />
     {weeks.map(week => <CalendarWeek {...week} dayRender={dayRender} key={week.id} />)}
@@ -12,8 +12,8 @@ const CalendarMonth = ({dayTitles, weeks, dayRender}) => (
 );
 
 CalendarMonth.propTypes = {
-  weeks: PropTypes.array.isRequired,
-  dayTitles: PropTypes.array.isRequired,
+  weeks: PropTypes.arrayOf(PropTypes.object).isRequired,
+  dayTitles: PropTypes.arrayOf(String).isRequired,
   dayRender: PropTypes.func.isRequired
 };
 

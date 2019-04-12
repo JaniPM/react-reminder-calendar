@@ -10,7 +10,7 @@ export const CALENDAR_EDIT_ITEM = '[Calendar] Edit item';
 export const CALENDAR_SAVE_ITEM = '[Calendar] Save item';
 export const CALENDAR_DELETE_ITEM = '[Calendar] Delete item';
 export const CALENDAR_CANCEL_EDIT = '[Calendar] Cancel edit';
- 
+
 /*
  * Action creators
  */

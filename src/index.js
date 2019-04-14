@@ -1,14 +1,12 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import { devToolsEnhancer } from 'redux-devtools-extension';
-import reducer from './state';
+import configureStore from './store';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(reducer, devToolsEnhancer());
+const store = configureStore({});
 
 ReactDOM.render(<App store={store} />, document.getElementById('root'));
 

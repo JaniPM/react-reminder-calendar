@@ -9,12 +9,11 @@ body {
 .App-footer {
   background-color: #282c34;
   height: 2em;
-  margin-top: 2em;
 }
 
 .content {
-  height: 90vh;
-  overflow: auto;
+  min-height: 100vh;
+  margin-top: 5vh;
 }
 
 @keyframes App-logo-spin {

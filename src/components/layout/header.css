@@ -5,6 +5,9 @@
 }
 
 .header {
+  position: fixed;
+  width: 100%;
+  top: 0;
   background-color: #282c34;
   height: 5vh;
   display: flex;

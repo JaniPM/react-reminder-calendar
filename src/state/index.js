@@ -1,6 +1,9 @@
-import { combineReducers } from 'redux';
-import remindersCalendarReducer from '../pages/reminders-calendar/state/reducer';
+import reducer, { initialState } from './reducer';
 
-export default combineReducers({
-  remindersCalendar: remindersCalendarReducer
-});
+export { reducer };
+
+/**
+ * Root state selectors
+ */
+
+export const selectRoot = state => state.root || initialState;

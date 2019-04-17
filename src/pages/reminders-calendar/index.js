@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { memo } from 'react';
+import { compose } from 'redux';
 import { connect } from 'react-redux';
+import useInjectReducer from '../../hooks/useInjectReducer';
 import Calendar from '../../components/calendar/calendar';
 import CaledarReminder from '../../components/calendar/calendar.reminder';
 import Modal from '../../components/modal';
 import Reminder from './components/reminder';
-import { getCurrentDate, getRemindersByDate, getSelectedItem } from './state';
+import {
+  reducer,
+  getCurrentDate,
+  getRemindersByDate,
+  getSelectedItem
+} from './state';
 import {
   moveBacward,
   moveForward,
@@ -16,7 +23,11 @@ import {
   selectToday
 } from './state/actions';
 
+const key = 'remindersCalendar';
+
 const RemindersCalendar = (props) => {
+  useInjectReducer({ key, reducer });
+
   const {
     selectedItem,
     onCancelEdit,
@@ -74,7 +85,6 @@ const mapDispatchToProps = dispatch => ({
   onCancelEdit: () => dispatch(cancelEdit())
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(RemindersCalendar);
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
+
+export default compose(withConnect, memo)(RemindersCalendar);

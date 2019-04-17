@@ -1,10 +1,17 @@
 import { createSelector } from 'reselect';
 import { compareAsc } from 'date-fns';
+import reducer, { initialState } from './reducer';
 
-export const getRemindersCalendar = state => state.remindersCalendar;
+export { reducer };
+
+/**
+ * Selectors
+ */
+
+export const selectRemindersCalendar = state => state.remindersCalendar || initialState;
 
 export const getRemindersByDate = createSelector(
-  getRemindersCalendar,
+  selectRemindersCalendar,
   state => (
     state.reminders.slice().sort(
       (a, b) => compareAsc(a.startDate, b.startDate)
@@ -21,11 +28,11 @@ export const getRemindersByDate = createSelector(
 );
 
 export const getCurrentDate = createSelector(
-  getRemindersCalendar,
+  selectRemindersCalendar,
   state => state.currentDate
 );
 
 export const getSelectedItem = createSelector(
-  getRemindersCalendar,
+  selectRemindersCalendar,
   state => state.selectedItem
 );

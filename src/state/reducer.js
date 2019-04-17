@@ -3,7 +3,7 @@
  * Place any root state properties here e.g. logged in user name etc.
  */
 
-const initialState = {
+export const initialState = {
 };
 
 export default function (state = initialState, action) {

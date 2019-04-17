@@ -44,7 +44,7 @@ function nextMonth(date) {
   return addMonths(date, 1);
 }
 
-const initialState = {
+export const initialState = {
   currentDate: new Date(),
   reminders: [],
   selectedItem: null

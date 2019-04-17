@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import configureStore from './store';
+import configureStore from './configureStore';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
